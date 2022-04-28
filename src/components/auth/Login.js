@@ -1,26 +1,27 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate} from "react-router-dom"
 import "./Login.css"
 
-export const Login = () => {
+export const Login = ({setAuthUser}) => {
     const email = useRef()
     const existDialog = useRef()
     const navigate = useNavigate()
 
-    const existingUserCheck = () => {
+    const getExistingUser = () => {
+        console.log(email.current.value)
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(res => res.json())
-            .then(user => user.length ? user[0] : false)
+            .then(users => users.length ? users[0] : false)
     }
 
     const handleLogin = (e) => {
         e.preventDefault()
 
-        existingUserCheck()
-            .then(exists => {
-                if (exists) {
-                    //setAuthUser(exists)
+        getExistingUser().then(user => {
+                if (user) {
+                    //sessionStorage.setItem("tag_user", JSON.stringify(user) );
+                    setAuthUser(user)
                     navigate("/home")
                 } else {
                     existDialog.current.showModal()
