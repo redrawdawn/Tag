@@ -23,12 +23,12 @@ nav {
   overflow: hidden;
 }
 nav ul {
-  
+  display: flex;
   padding: 0;
-  
-  justify-content: center;
   list-style: none;
   height: 100%;
+  justify-content: center;
+  justify-content: space-evenly;
 }
 nav:hover {
   width: 100%;

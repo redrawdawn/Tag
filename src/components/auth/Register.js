@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
 export const Register = ({setAuthUser}) => {
-    const firstName = useRef()
-    const lastName = useRef()
+    const name = useRef()
     const email = useRef()
     const conflictDialog = useRef()
     const navigate = useNavigate()
@@ -30,14 +29,14 @@ export const Register = ({setAuthUser}) => {
                         },
                         body: JSON.stringify({
                             email: email.current.value,
-                            name: `${firstName.current.value} ${lastName.current.value}`
+                            name: `${name.current.value}`
                         })
                     })
                         .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 //setAuthUser(createdUser)
-                                navigate("/")
+                                navigate("/home")
                             }
                         })
                 }
@@ -60,11 +59,7 @@ export const Register = ({setAuthUser}) => {
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for NSS Kennels</h1>
                 <fieldset>
                     <label htmlFor="firstName">First Name</label>
-                    <input ref={firstName} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="lastName">Last Name</label>
-                    <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
+                    <input ref={name} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="inputEmail">Email address</label>

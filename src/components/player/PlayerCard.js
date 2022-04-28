@@ -7,7 +7,7 @@ export const PlayerCard = () => {
             <div className="profile-picture">
                 <img src="../../../logo512.png"/>
             </div>
-            <h1>Player Name</h1>
+            <h1>PlayerName</h1>
             <div className="last-tagged">
                 <p>Last tagged:</p> 
                 <p>Oct 2</p>
