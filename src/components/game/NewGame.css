@@ -1,28 +1,37 @@
-.game {
+.new-game-div {
     background-color: #711A75;
     margin: 5em;
     padding: 1.5em;
     border-radius: 16px;
-    color: white;
 }
 
-.game-code {
-    margin: 1.5em;
-    background-color: #F582A7;
+.new-game {
     font-size: 24px;
+}
+
+.new-game-div div {
+    margin-bottom: 2em
+    
+}
+
+.game-name {
+    background-color: #F582A7;
     border: none;
     border-radius: 6px;
-    color: rgb(97, 97, 97)
 }
 
-.game button {
-    margin-bottom: 2em;
+.start-date, .end-date {
+    background-color: #F582A7;
+    border: none;
+    border-radius: 6px;
+}
+
+.new-game-div button {
     align-items: center;
-    width: 20%;
+    width: 30%;
     background-color: #F10086;
     border: none;
     border-radius: 6px;
     color:#711A75;
     float: right;
-    cursor: pointer;
 }

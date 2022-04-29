@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import './Game.css'
+import './NewGame.css'
 import { useNavigate } from "react-router-dom";
 import { saveNewGame } from "../../modules/GameManager";
 
@@ -35,12 +35,12 @@ export const NewGame = () => {
             })
     }
     return (
-        <>
-            <div className="game">
+        <div className="new-game-div">
+            <div className="new-game">
                 Create New Game
             </div>
             <div>
-                <input className="gameName" placeholder="game name here" type="text" ref={gameName} />
+                <input className="game-name" placeholder="game name here" type="text" ref={gameName} />
             </div>
             <div>
                 <input className="start-date" type="datetime-local" ref={startDateTime} />
@@ -52,6 +52,7 @@ export const NewGame = () => {
                 <button type="button" onClick={() => saveGame()}>Save</button>
             </div>
 
-        </>
+        </div>
+        //that's a lotta divs man
     )
 }
