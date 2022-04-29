@@ -9,15 +9,17 @@ import { Login } from './components/auth/Login';
 ///import { Router, Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import { Register } from './components/auth/Register';
+import { Game } from './components/game/Game';
+import { NewGame } from './components/game/NewGame';
 
 export const ApplicationViews = ({ setAuthUser, isAuthenticated, clearAuthUser }) => {
     
     const PrivateOutlet = () => {
-        console.log("isAuthenticated: " + isAuthenticated.toString())
+        //console.log("isAuthenticated: " + isAuthenticated.toString())
         return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
     }
     
-console.log("rendering ApplicationViews")
+//console.log("rendering ApplicationViews")
     return (
         <Router>
 
@@ -27,6 +29,8 @@ console.log("rendering ApplicationViews")
                 <Route path="/register" element={<Register />} />
 
                 <Route path="/" element={<PrivateOutlet />} >
+                    <Route path='/newgame' element={<NewGame />} />
+                    <Route path='/games/:code' element={<Game />} />
                     <Route path="/home" element={<PlayerList />} />
                     <Route path="/profile" element={<UserCard clearAuthUser={clearAuthUser} />} />
                 </Route>

@@ -12,7 +12,7 @@ export const Tag = () => {
     }
 
     const clearAuthUser = () => {
-        console.log("clearing auth user")
+        //console.log("clearing auth user")
         sessionStorage.clear();
         setIsAuthenticated(sessionStorage.getItem("tag_user") !== null)
       }

@@ -9,7 +9,7 @@ export const Login = ({setAuthUser}) => {
     const navigate = useNavigate()
 
     const getExistingUser = () => {
-        console.log(email.current.value)
+       //console.log(email.current.value)
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(res => res.json())
             .then(users => users.length ? users[0] : false)

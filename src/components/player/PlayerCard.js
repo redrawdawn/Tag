@@ -12,6 +12,13 @@ export const PlayerCard = () => {
                 <p>Last tagged:</p> 
                 <p>Oct 2</p>
             </div>
+            <div className="extra-player-info">
+                <p>test 1</p>
+                <p>test 2</p>
+                <br />
+                <p>test 3</p>
+                <p>test 4</p>
+            </div>
         </div>
     )
 }
