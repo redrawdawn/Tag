@@ -8,7 +8,8 @@
     width: 30em;
     height: 5em;
     display: flex;
-    
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .profile-picture > img {
@@ -21,3 +22,14 @@
     height: 5em;
     margin-right: 1em;
 }
+
+.extra-player-info {
+    padding: 0 18px;
+    
+    background-color: #f1f1f1;
+}
+
+.card:hover {
+    height: 15em;
+    background-color: #555;
+  }
