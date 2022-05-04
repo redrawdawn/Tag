@@ -4,7 +4,7 @@ import { Navbar } from "./components/nav/navbar";
 
 export const Tag = () => {
 
-    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("nutshell_user") !== null)
+    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("tag_user") !== null)
 
     const setAuthUser = (user) => {
         sessionStorage.setItem("tag_user", JSON.stringify(user))

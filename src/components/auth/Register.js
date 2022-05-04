@@ -36,7 +36,7 @@ export const Register = ({setAuthUser}) => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 //setAuthUser(createdUser)
-                                navigate("/home")
+                                navigate("/game")
                             }
                         })
                 }

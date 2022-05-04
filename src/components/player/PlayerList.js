@@ -1,12 +1,13 @@
 import React from "react";
 import { PlayerCard } from "./PlayerCard";
 
-export const PlayerList = () => {
+export const PlayerList = ({players}) => {
+
     return(
         <>
-            <PlayerCard />
-            <PlayerCard />
-            <PlayerCard />
+            {players.map(p =>
+                <PlayerCard key={p.id} player={p} />
+            )}
         </>
     )
-}
+} 

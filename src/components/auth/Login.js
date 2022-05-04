@@ -22,7 +22,7 @@ export const Login = ({setAuthUser}) => {
                 if (user) {
                     //sessionStorage.setItem("tag_user", JSON.stringify(user) );
                     setAuthUser(user)
-                    navigate("/home")
+                    navigate("/game")
                 } else {
                     existDialog.current.showModal()
                 }
@@ -38,10 +38,10 @@ export const Login = ({setAuthUser}) => {
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Nashville Kennels</h1>
+                    <h1>Tag</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                        <label htmlFor="inputEmail"></label>
                         <input ref={email} type="email"
                             id="email"
                             className="form-control"
@@ -49,14 +49,14 @@ export const Login = ({setAuthUser}) => {
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button className="sign-in-button" type="submit">
                             Sign in
                         </button>
                     </fieldset>
-                </form>
-            </section>
             <section className="link--register">
                 <Link to="/register">Not a member yet?</Link>
+            </section>
+                </form>
             </section>
         </main>
     )
