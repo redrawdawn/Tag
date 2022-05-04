@@ -9,7 +9,7 @@ if (tmp) {
 }
 */
 
-export const UserCard = ({clearAuthUser}) => {
+export const Profile = ({clearAuthUser}) => {
     const currentUser = JSON.parse(sessionStorage.getItem("tag_user"))
 
     const navigate = useNavigate();

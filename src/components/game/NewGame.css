@@ -1,5 +1,6 @@
 .new-game-div {
     background-color: #711A75;
+    
     margin: 5em;
     padding: 1.5em;
     border-radius: 16px;
@@ -33,5 +34,5 @@
     border: none;
     border-radius: 6px;
     color:#711A75;
-    float: right;
+    /* float: right; */
 }

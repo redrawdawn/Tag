@@ -2,10 +2,9 @@
     box-shadow: 0 4px 8px 0 black;
     transition: 1s;
     border-radius: 16px;
-    background: aliceblue;
+    background: #F582A7;
     margin-bottom: 2em;
     padding: 8px;
-    width: 30em;
     height: 5em;
     display: flex;
     cursor: pointer;
@@ -14,22 +13,26 @@
 
 .profile-picture > img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .profile-picture {
     width: 5em;
     height: 5em;
-    margin-right: 1em;
 }
 
 .extra-player-info {
     padding: 0 18px;
-    
+    border-radius: 16px;
     background-color: #f1f1f1;
 }
 
 .card:hover {
     height: 15em;
-    background-color: #555;
+    background-color: #ff9bbb;
+    box-shadow: 0 10px 18px 0 black;
+  }
+
+  .tag-button-div {
+      width: 100%;
   }

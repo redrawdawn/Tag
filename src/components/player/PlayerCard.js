@@ -1,13 +1,20 @@
 import React from "react";
 import "./PlayerCard.css"
+import { TagButton } from "../tag/TagButton";
 
-export const PlayerCard = () => {
-    return (
+export const PlayerCard = ({player}) => {
+
+    return ( 
         <div className="card">
             <div className="profile-picture">
                 <img src="../../../logo512.png"/>
             </div>
-            <h1>PlayerName</h1>
+            <div>
+                <h1>PlayerName</h1>
+                <div className="tag-button-div">
+                    <TagButton playerId={player.id} />
+                </div>
+            </div>
             <div className="last-tagged">
                 <p>Last tagged:</p> 
                 <p>Oct 2</p>

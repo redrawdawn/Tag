@@ -10,14 +10,13 @@ fieldset {
 }
 
 .form--login {
-    display: inline-block;
-    margin: 0 auto;
     text-align: left;
-}
-
-.form--login > fieldset > input[type="email"],
-.form--login > fieldset > input[type="password"] {
-    width: 25em;
+    color: #F582A7;
+    margin: 3em;
+    padding: 3em;
+    border-radius: 5em;
+    min-height: 25rem;
+    background-color: #711A75;
 }
 
 .label--login {
@@ -34,27 +33,17 @@ fieldset {
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    background-color: #fff;
+    background-color: #F582A7;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
+    border: 1px solid #F582A7;
+    border-radius: 1em;
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .container--login {
     text-align: center;
-}
-
-.form--login {
-    background-position-x: right;
-    background-image: url(logo.png);
-    z-index: 1;
-    min-height: 25rem;
-    min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
+    
 }
 
 .button--close {
@@ -67,3 +56,23 @@ fieldset {
     min-height: 5rem;
 }
 
+.link--register {
+    padding: 3px;
+    background-color: #611765;
+    color: white;
+    border-radius: 6px;
+    float: left;
+}
+
+.link--register a {
+    color: #F582A7;
+}
+
+.sign-in-button {
+    background-color: #F10086;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+}

@@ -17,10 +17,14 @@ const getCode = () => {
 }
 
 export const NewGame = () => {
-    const gameName = useRef("Game")
-    const startDateTime = useRef(Date.now)
-    const endDateTime = useRef(Date.now)
+    const gameName = useRef()
+    const startDateTime = useRef()
+    const endDateTime = useRef()
     const navigate = useNavigate()
+
+    //let today = new Date()
+    //startDateTime.current.value = today.toISOString()
+    //console.log(today.toISOString()) 
 
     const saveGame = () => {
         let newGame = {
@@ -40,7 +44,7 @@ export const NewGame = () => {
                 Create New Game
             </div>
             <div>
-                <input className="game-name" placeholder="game name here" type="text" ref={gameName} />
+                <input className="game-name" placeholder="new game name" type="text" ref={gameName} />
             </div>
             <div>
                 <input className="start-date" type="datetime-local" ref={startDateTime} />

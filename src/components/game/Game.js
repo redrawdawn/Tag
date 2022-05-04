@@ -1,29 +1,18 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { getGameByCode } from "../../modules/GameManager";
-import './Game.css'
-import { useNavigate } from "react-router-dom";
+import { PlayerList } from "../player/PlayerList";
 
 export const Game = () => {
-    const {code} = useParams();
-    console.log("Game code: " + code.toString())
 
-    const navigate = useNavigate()
+    // get current/latest game from database...
+    const game = { id: 1, name: "Game One"}
 
-    let game = null
-    getGameByCode(code)
-        .then(games => game = games[0]);
-
+    // ... and then use it to get playersData for game id 
+    //const playersData = getPlayersForGameId(game.id);
+    const mockPlayersData = [{ id: 1 }, { id: 2 }, { id: 3 }]
 
     return (
-        <>
-        <div className="game">
-            Copy the link below and send it to your friends to invite them to your game
-            <div className="game-code">
-                {code} {game}
-            </div>
-            <button type="button" onClick={navigate("/home")}>done</button>
-        </div>
-        </>
+    <>
+        <PlayerList players={mockPlayersData} />
+    </>
     )
 }
