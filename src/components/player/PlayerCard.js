@@ -10,7 +10,7 @@ export const PlayerCard = ({player}) => {
                 <img src="../../../logo512.png"/>
             </div>
             <div>
-                <h1>PlayerName</h1>
+                <h1>{player.name}</h1>
                 <div className="tag-button-div">
                     <TagButton playerId={player.id} />
                 </div>
