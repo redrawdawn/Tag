@@ -16,9 +16,9 @@ export const Profile = ({clearAuthUser}) => {
     
     return (
         <div className="card">
-            <div className="profile-picture">
+            {/* <div className="profile-picture">
                 <img src="../../../logo512.png" />
-            </div>
+            </div> */}
             <h1>{currentUser.name}</h1>
             <div className="last-tagged">
                 <p>Last tagged:</p>

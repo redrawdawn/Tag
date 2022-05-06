@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { getGameByCode } from "../../modules/GameManager";
+import { getGamesByCode } from "../../modules/GameManager";
 import './GameCode.css'
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export const GameCode = () => {
     const navigate = useNavigate()
 
     let game = null
-    getGameByCode(code)
+    getGamesByCode(code)
         .then(games => game = games[0]);
 
 
