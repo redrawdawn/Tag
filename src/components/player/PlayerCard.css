@@ -1,5 +1,6 @@
 .card {
     box-shadow: 0 4px 8px 0 black;
+    color: #180A0A;
     transition: 1s;
     border-radius: 16px;
     background: #F582A7;
@@ -9,6 +10,14 @@
     display: flex;
     cursor: pointer;
     overflow: hidden;
+}
+
+.card.is-it {
+    background-color: rgb(142, 255, 255);
+}
+
+.card.is-it:hover {
+    background-color: rgb(199, 252, 252);
 }
 
 .profile-picture > img {
@@ -29,7 +38,7 @@
 
 .card:hover {
     height: 15em;
-    background-color: #ff9bbb;
+    background-color: #fbbcd0;
     box-shadow: 0 10px 18px 0 black;
   }
 

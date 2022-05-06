@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PlayerCard.css"
 import { TagButton } from "../tag/TagButton";
 
-export const PlayerCard = ({player}) => {
+
+export const PlayerCard = ({game, player, setItUserId, itUserId}) => {
+    let [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("tag_user")))
+    let iAmIt = itUserId == currentUser.id
+    let thisPlayerIsIt = player.id == itUserId
+    let isItClass = thisPlayerIsIt ? "is-it" : ""
+
+    let tagButtonDiv = (iAmIt && currentUser.id != player.id) ?
+                <div className="tag-button-div">
+                    <TagButton gameId={game.id} playerId={player.id} setItUserId={setItUserId} />
+                </div>
+                : "";
 
     return ( 
-        <div className="card">
-            <div className="profile-picture">
+        <div className={`card ${isItClass}`}>
+            {/* <div className="profile-picture">
                 <img src="../../../logo512.png"/>
-            </div>
+            </div> */}
             <div>
                 <h1>{player.name}</h1>
-                <div className="tag-button-div">
-                    <TagButton playerId={player.id} />
-                </div>
+                {tagButtonDiv}
             </div>
             <div className="last-tagged">
                 <p>Last tagged:</p> 
