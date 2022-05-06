@@ -66,10 +66,5 @@ export const getGame = (gameId) => {
     .then(games => games[0])
 }
 
-export const getLastTag = (gameId) => {
-    return fetch(`${remoteURL}/tags?gameId=${gameId}&_sort=datetime&_order=desc`)
-    .then(res => res.json())
-    .then(tags => tags[0])
-}
 
 

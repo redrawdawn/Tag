@@ -4,16 +4,14 @@ import { getGamesByCode } from "../../modules/GameManager";
 import './GameCode.css'
 import { useNavigate } from "react-router-dom";
 
+
 export const GameCode = () => {
     const {code} = useParams();
-    console.log("Game code: " + code.toString())
-
     const navigate = useNavigate()
-
+    console.log("Game code: " + code.toString())
     let game = null
     getGamesByCode(code)
         .then(games => game = games[0]);
-
 
     return (
         <>
@@ -22,8 +20,8 @@ export const GameCode = () => {
             <div className="game-code">
                 {code} {game}
             </div>
-            <button type="button" onClick={navigate("/game")}>done</button>
+            <button type="button" onClick={()=> navigate("/game")}>done</button>
         </div>
-        </>
+        </> 
     )
 }
