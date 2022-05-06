@@ -7,9 +7,19 @@
     margin-bottom: 2em;
     padding: 8px;
     height: 5em;
-    display: flex;
+    /* display: flex; */
     cursor: pointer;
     overflow: hidden;
+}
+
+.card:hover {
+    height: 15em;
+    background-color: #fbbcd0;
+    box-shadow: 0 10px 18px 0 black;
+}
+
+.card .mainPanel {
+    display: flex;
 }
 
 .card.is-it {
@@ -36,12 +46,6 @@
     background-color: #f1f1f1;
 }
 
-.card:hover {
-    height: 15em;
-    background-color: #fbbcd0;
-    box-shadow: 0 10px 18px 0 black;
-  }
-
-  .tag-button-div {
+.tag-button-div {
       width: 100%;
   }

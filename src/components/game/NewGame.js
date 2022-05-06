@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import './NewGame.css'
 import { useNavigate } from "react-router-dom";
-import { saveNewGame } from "../../modules/GameManager";
+import { joinGameByCode, saveNewGame, tagYoureIt } from "../../modules/GameManager";
+import { GameCode } from "./GameCode";
 
 const getCode = () => {
     let length = 8;
@@ -17,6 +18,7 @@ const getCode = () => {
 }
 
 export const NewGame = () => {
+    let [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("tag_user")))
     const gameName = useRef()
     const startDateTime = useRef()
     const endDateTime = useRef()
@@ -27,15 +29,20 @@ export const NewGame = () => {
     //console.log(today.toISOString()) 
 
     const saveGame = () => {
+        let gameCode = getCode()
         let newGame = {
             name: gameName.current.value,
             startDateTime: startDateTime.current.value,
             endDateTime: endDateTime.current.value,
-            code: getCode()
+            code: gameCode
         }
         saveNewGame(newGame)
             .then(game => { 
-                navigate(`/games/${game.code}`)
+                joinGameByCode(currentUser.id, gameCode)
+                    .then(()=> {
+                        tagYoureIt(game.id, currentUser.id, currentUser.id)
+                        .then(()=> navigate(`/gamecode/${gameCode}`))
+                    }) 
             })
     }
     return (

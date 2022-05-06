@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getCurrentGame, getGamesByCode, getLastTag, getPlayersForGame, joinGameByCode } from "../../modules/GameManager";
+import { getCurrentGame, getGamesByCode, getPlayersForGame, joinGameByCode } from "../../modules/GameManager";
+import { getLastTag } from "../../modules/TagManager";
 import { PlayerList } from "../player/PlayerList";
 
 export const Game = () => {
@@ -29,7 +30,7 @@ export const Game = () => {
             })
             getLastTag(game.id).then(t => {
                 setItUserId(t.taggedId)
-                game.itId = t.taggedId
+                //game.itId = t.taggedId
             })
         }
     }, [game])
@@ -37,14 +38,15 @@ export const Game = () => {
     if (game) {
         let youAreIt = currentUser.id == itUserId;
         let youAreItDiv = youAreIt ? <div>You are it!</div> : <></>
-            return (
-                <>
-                    <div className="game-component">{game.name}</div>
-                    <div>{itUserId}</div>
-                    {youAreItDiv}
-                    <PlayerList game={game} players={players} setItUserId={setItUserId} itUserId={itUserId} />
-                </>
-            )
+
+        return (
+            <>
+                <h2 className="game-component">{game.name} ({game.code})</h2>
+                {/* <div>{itUserId}</div> */}
+                {/* {youAreItDiv} */}
+                <PlayerList game={game} players={players} setItUserId={setItUserId} itUserId={itUserId} />
+            </>
+        )
     }
 
     return (

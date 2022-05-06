@@ -17,6 +17,7 @@ code {
 }
 
 #root {
+  max-width: 40em;
   background-color: #180A0A;
   padding: 1em;
   width: 100%;

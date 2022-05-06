@@ -12,6 +12,7 @@ import { Register } from './components/auth/Register';
 import { NewGame } from './components/game/NewGame';
 import { Game } from './components/game/Game';
 import { GameCode } from './components/game/GameCode';
+import { TagHistory } from './components/tag/TagHistory';
 
 export const ApplicationViews = ({ setAuthUser, isAuthenticated, clearAuthUser }) => {
     
@@ -31,9 +32,10 @@ export const ApplicationViews = ({ setAuthUser, isAuthenticated, clearAuthUser }
 
                 <Route path="/" element={<PrivateOutlet />} >
                     <Route path='/newgame' element={<NewGame />} />
-                    <Route path='/gamecode' element={<GameCode />} />
-                    <Route path='/games/:code' element={<PlayerList />} />
+                    <Route path='/gamecode/:code' element={<GameCode />} />
+                    {/* <Route path='/games/:code' element={<PlayerList />} /> */}
                     <Route path="/game" element={<Game />} />
+                    <Route path='/game/:id/taghistory' element={<TagHistory />} />
                     <Route path="/profile" element={<Profile clearAuthUser={clearAuthUser} />} />
                 </Route>
             </Routes>
