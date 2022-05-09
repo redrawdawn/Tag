@@ -10,7 +10,7 @@ export const Navbar = () => {
                     <Link className="navbar__link" to="/newgame">GAMEofNEW</Link>
                 </li> */}
                 <li>
-                    <Link className="navbar__link" to="/newgame">Tag History</Link>
+                    <Link className="navbar__link" to="/game/taghistory">Tag History</Link>
                 </li>
                 <li>
                     <Link className="navbar__link" to="/game">Game</Link>

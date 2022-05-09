@@ -46,10 +46,10 @@ export const PlayerCard = ({game, player, setItUserId, itUserId}) => {
                 <h1>{player.name}</h1>
                 <div className="last-tagged">
                     {(thisPlayerIsIt ? <>CURRENTLY IT!</> : "")}
-                    <p>Last tagged: {(tags.length > 0) ? formatDate(tags[0].datetime) : " not yet!"}</p> 
                 </div>
             </div>
             <div className="expandoPanel">
+                    <p>Last tagged: {(tags.length > 0) ? formatDate(tags[0].datetime) : " not yet!"}</p> 
                 {tagButtonDiv}
             </div>
 

@@ -19,7 +19,10 @@ export const getGamesByCode = (code) => {
 export const getCurrentGame = (playerId) => {
     let results =  fetch(`${remoteURL}/gameplayers/?_expand=game&userId=${playerId}`)
         .then(res => res.json())
-        .then(gps => gps[0])
+        .then(games => {
+            games.sort((g1, g2) => g2.id - g1.id)
+            return games[0]
+        })
     return results;
 }
 

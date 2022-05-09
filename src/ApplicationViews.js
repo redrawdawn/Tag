@@ -35,7 +35,7 @@ export const ApplicationViews = ({ setAuthUser, isAuthenticated, clearAuthUser }
                     <Route path='/gamecode/:code' element={<GameCode />} />
                     {/* <Route path='/games/:code' element={<PlayerList />} /> */}
                     <Route path="/game" element={<Game />} />
-                    <Route path='/game/:id/taghistory' element={<TagHistory />} />
+                    <Route path='/game/taghistory' element={<TagHistory />} />
                     <Route path="/profile" element={<Profile clearAuthUser={clearAuthUser} />} />
                 </Route>
             </Routes>
