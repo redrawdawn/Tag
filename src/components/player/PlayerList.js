@@ -11,4 +11,4 @@ export const PlayerList = ({game, players, setItUserId, itUserId}) => {
             )}
         </>
     )
-}  
+}
