@@ -24,8 +24,6 @@ export const ApplicationViews = ({ setAuthUser, isAuthenticated, clearAuthUser }
 //console.log("rendering ApplicationViews")
     return (
         <Router>
-
-
             <Routes>
                 <Route path="/login" element={<Login setAuthUser={setAuthUser}/>} />
                 <Route path="/register" element={<Register />} />
@@ -39,7 +37,6 @@ export const ApplicationViews = ({ setAuthUser, isAuthenticated, clearAuthUser }
                     <Route path="/profile" element={<Profile clearAuthUser={clearAuthUser} />} />
                 </Route>
             </Routes>
-            <Navbar />
         </Router>
     )
 }

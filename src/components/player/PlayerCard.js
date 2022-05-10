@@ -40,17 +40,18 @@ export const PlayerCard = ({game, player, setItUserId, itUserId}) => {
         <div className={`card ${isItClass}`}>
 
             <div className="mainPanel">
-            {/* <div className="profile-picture">
-                <img src="../../../logo512.png"/>
-            </div> */}
-                <h1>{player.name}</h1>
-                <div className="last-tagged">
-                    {(thisPlayerIsIt ? <>CURRENTLY IT!</> : "")}
-                </div>
+            <div className="profile-picture" style={{background: 'lightblue'}}>
+                <img src="../../../icons/rhino.png"/>
+            </div>
+                <h1 className="player_name">{player.name} {(thisPlayerIsIt ? <>is IT!</> : "")}</h1>
+                
             </div>
             <div className="expandoPanel">
                     <p>Last tagged: {(tags.length > 0) ? formatDate(tags[0].datetime) : " not yet!"}</p> 
                 {tagButtonDiv}
+                <div className="last-tagged">
+                    {(thisPlayerIsIt ? <>CURRENTLY IT!</> : "")}
+                </div>
             </div>
 
 

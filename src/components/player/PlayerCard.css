@@ -2,7 +2,7 @@
     box-shadow: 0 4px 8px 0 black;
     color: #180A0A;
     transition: 1s;
-    border-radius: 16px;
+    border-radius: 1em;
     background: #F582A7;
     margin-bottom: 2em;
     padding: 8px;
@@ -10,6 +10,13 @@
     /* display: flex; */
     cursor: pointer;
     overflow: hidden;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.player_name {
+    margin-left: .2em;
 }
 
 .card:hover {
@@ -24,6 +31,7 @@
 
 .card.is-it {
     background-color: rgb(142, 255, 255);
+    width: 100%;
 }
 
 .card.is-it:hover {
@@ -31,13 +39,20 @@
 }
 
 .profile-picture > img {
-    width: 100%;
+    width: 65%;
     height: auto;
+    margin: auto;
 }
 
 .profile-picture {
+    background-color: bisque;
+    border-radius: 50%;
+    padding: .1em;
     width: 5em;
     height: 5em;
+    min-width: 5em;
+    display: flex;
+  justify-content: center;
 }
 
 .extra-player-info {
@@ -48,4 +63,8 @@
 
 .tag-button-div {
       width: 100%;
+  }
+
+  .players_div {
+      text-align: center;
   }

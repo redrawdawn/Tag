@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCurrentGame, getGamesByCode, getPlayersForGame, joinGameByCode } from "../../modules/GameManager";
 import { getLastTag } from "../../modules/TagManager";
+import { Navbar } from "../nav/navbar";
 import { PlayerList } from "../player/PlayerList";
 
 export const Game = () => {
@@ -45,6 +46,7 @@ export const Game = () => {
                 {/* <div>{itUserId}</div> */}
                 {/* {youAreItDiv} */}
                 <PlayerList game={game} players={players} setItUserId={setItUserId} itUserId={itUserId} />
+                <Navbar />
             </>
         )
     }
@@ -64,6 +66,7 @@ export const Game = () => {
             <div>
                 <button type="button" className="start-new-game" onClick={() => navigate("/newgame")}>Start a new game</button>
             </div>
+            <Navbar />
         </>
     )
 }
