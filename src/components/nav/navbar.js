@@ -10,13 +10,25 @@ export const Navbar = () => {
                     <Link className="navbar__link" to="/newgame">GAMEofNEW</Link>
                 </li> */}
                 <li>
-                    <Link className="navbar__link" to="/game/taghistory">Tag History</Link>
+                    <Link className="navbar__link" to="/game/taghistory">
+                        <div>
+                            <img src="../../../icons/result.png"/>
+                        </div>
+                    </Link>
                 </li>
                 <li>
-                    <Link className="navbar__link" to="/game">Game</Link>
+                    <Link className="navbar__link" to="/game">
+                        <div>
+                            <img src="../../../icons/home.png"/>
+                        </div>
+                    </Link>
                 </li>
                 <li>
-                    <Link className="navbar__link" to="/profile">Your Profile</Link>
+                    <Link className="navbar__link" to="/profile">
+                        <div>
+                            <img src="../../../icons/user.png"/>
+                        </div>
+                    </Link>
                 </li>
 
             </ul>
